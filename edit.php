@@ -2,6 +2,11 @@
 // Include the database connection file
 include('db_connection.php');
 
+// Enable error reporting for debugging
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
+
 // Check if the NIC parameter is set in the URL
 if (isset($_GET['nic'])) {
     // Get and sanitize the NIC value
@@ -22,6 +27,9 @@ if (isset($_GET['nic'])) {
             exit();
         }
         $stmt->close();
+    } else {
+        echo "Query preparation failed: " . $conn->error;
+        exit();
     }
 } else {
     echo "NIC not provided.";
@@ -49,9 +57,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             header("Location: fetch.php?message=Record updated successfully");
             exit();
         } else {
-            echo "Error: " . $stmt->error;
+            echo "Error updating record: " . $stmt->error;
         }
         $stmt->close();
+    } else {
+        echo "Query preparation failed: " . $conn->error;
     }
 }
 
@@ -62,41 +72,123 @@ $conn->close();
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <link rel="stylesheet" href="css/submit.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Edit Kidney Patient Record</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        form {
+            max-width: 800px;
+            margin: 0 auto;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+
+        .form-group {
+            width: 48%; /* Two columns with spacing */
+            margin-bottom: 15px;
+        }
+
+        .form-group textarea {
+            width: 100%;
+            height: 100px;
+            resize: none;
+        }
+
+        input, select, textarea {
+            width: 100%;
+            height: 40px;
+            padding: 5px;
+            font-size: 16px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+
+        button {
+            margin-left:250px;
+          
+            justify-content: center;
+            width: 50%;
+            height: 45px;
+            font-size: 18px;
+            background-color: #d88080;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        @media (max-width: 768px) {
+            .form-group {
+                width: 100%; /* Single column on smaller screens */
+            }
+        }
+    </style>
 </head>
 <body>
     <h1>Edit Kidney Patient Record</h1>
     <form method="POST" action="">
-        <label for="first_name">First Name:</label><br>
-        <input type="text" name="first_name" value="<?php echo htmlspecialchars($patient['first_name']); ?>" required><br><br>
+        <div class="form-group">
+            <label for="first_name">First Name:</label>
+            <input type="text" id="first_name" name="first_name" value="<?php echo htmlspecialchars($patient['first_name']); ?>" required>
+        </div>
 
-        <label for="last_name">Last Name:</label><br>
-        <input type="text" name="last_name" value="<?php echo htmlspecialchars($patient['last_name']); ?>" required><br><br>
+        <div class="form-group">
+            <label for="last_name">Last Name:</label>
+            <input type="text" id="last_name" name="last_name" value="<?php echo htmlspecialchars($patient['last_name']); ?>" required>
+        </div>
 
-        <label for="dob">Date of Birth:</label><br>
-        <input type="date" name="dob" value="<?php echo htmlspecialchars($patient['dob']); ?>" required><br><br>
+        <div class="form-group">
+            <label for="dob">Date of Birth:</label>
+            <input type="date" id="dob" name="dob" value="<?php echo htmlspecialchars($patient['dob']); ?>" required>
+        </div>
 
-        <label for="gender">Gender:</label><br>
-        <select name="gender" required>
-            <option value="Male" <?php echo $patient['gender'] == "Male" ? "selected" : ""; ?>>Male</option>
-            <option value="Female" <?php echo $patient['gender'] == "Female" ? "selected" : ""; ?>>Female</option>
-        </select><br><br>
+        <div class="form-group">
+            <label for="gender">Gender:</label>
+            <select id="gender" name="gender" required>
+                <option value="Male" <?php echo $patient['gender'] == "Male" ? "selected" : ""; ?>>Male</option>
+                <option value="Female" <?php echo $patient['gender'] == "Female" ? "selected" : ""; ?>>Female</option>
+            </select>
+        </div>
 
-        <label for="email">Email:</label><br>
-        <input type="email" name="email" value="<?php echo htmlspecialchars($patient['email']); ?>" required><br><br>
+        <div class="form-group">
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" value="<?php echo htmlspecialchars($patient['email']); ?>" required>
+        </div>
 
-        <label for="phone">Phone:</label><br>
-        <input type="text" name="phone" value="<?php echo htmlspecialchars($patient['phone']); ?>" required><br><br>
+        <div class="form-group">
+            <label for="phone">Phone:</label>
+            <input type="text" id="phone" name="phone" value="<?php echo htmlspecialchars($patient['phone']); ?>" required>
+        </div>
 
-        <label for="blood_type">Blood Type:</label><br>
-        <input type="text" name="blood_type" value="<?php echo htmlspecialchars($patient['blood_type']); ?>" required><br><br>
+        <div class="form-group">
+            <label for="blood_type">Blood Type:</label>
+            <input type="text" id="blood_type" name="blood_type" value="<?php echo htmlspecialchars($patient['blood_type']); ?>" required>
+        </div>
 
-        <label for="address">Address:</label><br>
-        <textarea name="address" required><?php echo htmlspecialchars($patient['address']); ?></textarea><br><br>
+        <div class="form-group">
+            <label for="address">Address:</label>
+            <textarea id="address" name="address" required><?php echo htmlspecialchars($patient['address']); ?></textarea>
+        </div>
 
-        <button type="submit">Save</button>
+        <div class="form-group" style="width: 50%;">
+            <button type="submit">Save</button>
+        </div>
     </form>
 </body>
 </html>

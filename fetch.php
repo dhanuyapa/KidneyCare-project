@@ -78,7 +78,7 @@ $result = $conn->query($sql);
                             <a href="delete.php?nic=<?php echo $row['nic']; ?>" onclick="return confirm('Are you sure you want to delete this record?');">
                                 
                             <div class="edit-image">
-            <img src="edit.png" alt="Yoga Image">
+            <img src="delete.png" alt="Yoga Image">
         </div></a>
                         </td>
                     </tr>
