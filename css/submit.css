@@ -1,0 +1,148 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+
+
+
+.Title {
+    font-family: 'Roboto', Arial, sans-serif; /* Use the imported font */
+    font-size: 3rem; /* Adjust font size */
+    font-weight: bold; /* Make text bold */
+    color: #ffffff; /* White text color */
+    background-color: #d88080; /* Blue background (Bootstrap primary color) */
+    padding: 30px; /* Add more padding for better appearance */
+    border-radius: 0; /* Remove rounded corners */
+    text-align: center; /* Center the text */
+    margin: 0; /* Remove margins */
+    width: 100%; /* Make the title take up the full width */
+    box-sizing: border-box; /* Include padding and border in the element's total width */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Add a slight shadow */
+}
+
+@media (max-width: 768px) {
+    .Title {
+        font-size: 2rem; /* Adjust the font size for smaller screens */
+        padding: 20px; /* Adjust padding for smaller screens */
+    }
+}
+
+
+.container {
+    display: flex; /* Enables Flexbox layout */
+    justify-content: space-between; /* Distributes space between items */
+    gap: 20px; /* Adds space between the grid items */
+    margin: 20px;
+}
+
+/* Flex item for grid 1 */
+.grid1 {
+    flex: 1; /* Makes the item take up equal space */
+    background-color: #e9b6b6;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.first {
+    display: flex;
+    gap: 20px; /* Adjust the gap as needed */
+    width: 600px;
+}
+
+.first input {
+    flex: 1; /* Optional: Makes the inputs grow equally */
+    padding: 10px;
+    margin-bottom: 10px; /* To add space between rows */
+}
+.second {
+    display: flex;
+    gap: 10px; /* Adjust the gap as needed */
+    width: 600px;
+}
+.second input {
+    flex: 1; /* Optional: Makes the inputs grow equally */
+    padding: 10px;
+    margin-bottom: 10px; /* To add space between rows */
+}
+.third {
+    display: flex;
+    gap: 10px; /* Adjust the gap as needed */
+    width: 600px;
+}
+
+
+.third input {
+    flex: 1; /* Optional: Makes the inputs grow equally */
+    padding: 10px;
+    margin-bottom: 10px; /* To add space between rows */
+}
+
+.address{
+    padding: 10px;
+    margin-bottom: 10px;
+  width:100%;
+  
+
+}
+
+
+/* Flex item for grid 2 */
+.grid2 {
+    flex: 1; /* Makes the item take up equal space */
+    background-color: #ffffff;
+    color: rgb(5, 3, 3);
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.image{
+
+    width: 150px; /* Smaller image for smaller screens */
+    height: 150px;
+    justify-content: center; /* Center horizontally */
+    align-items: center; 
+    margin-left: 190px;
+
+}
+
+.submit-button {
+    display: flex; /* Enables Flexbox for centering */
+    justify-content: center; /* Centers the button horizontally */
+    align-items: center; /* Centers the button vertically */
+    margin-top: 20px; /* Adds spacing above the button */
+}
+
+.submit-button button {
+    background-color: #640d17; /* Blue background */
+    color: white; /* White text color */
+    font-size: 1rem; /* Standard font size */
+    font-family: 'Roboto', Arial, sans-serif; /* Font style */
+    padding: 10px 20px; /* Adds padding inside the button */
+    border: none; /* Removes default border */
+    border-radius: 5px; /* Rounds the corners */
+    cursor: pointer; /* Shows a pointer on hover */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Adds a subtle shadow */
+    transition: background-color 0.3s ease; /* Smooth hover effect */
+}
+
+.submit-button button:hover {
+    background-color: #841212; /* Darker blue on hover */
+}
+
+.submit-button button:active {
+    background-color: #b73131; /* Even darker blue when clicked */
+    transform: scale(0.95); /* Slightly shrinks on click for effect */
+}
+.line {
+    font-family: 'Roboto', Arial, sans-serif; /* Font style */
+    font-size: 1.2rem; /* Font size */
+    color: #333; /* Dark text color */
+    text-align: center; /* Centers the text horizontally */
+    margin: 20px 0; /* Adds vertical spacing */
+    line-height: 1.5; /* Improves readability */
+}

@@ -59,57 +59,114 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/submit.css">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+
+
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kidney Patient Registration</title>
+     
 </head>
 <body>
-    <h1>Kidney Patient Registration Form</h1>
-    <form method="POST" action="submit.php">
-        <label for="first_name">First Name:</label><br>
-        <input type="text" name="first_name" required><br><br>
 
-        <label for="last_name">Last Name:</label><br>
-        <input type="text" name="last_name" required><br><br>
+<div class="Title">Kidney Patient Registration Form</div>
 
-        <label for="dob">Date of Birth:</label><br>
-        <input type="date" name="dob" required><br><br>
 
-        <label for="gender">Gender:</label><br>
-        <select name="gender" required>
+<div class="container">
+        <!-- First Grid Section -->
+        <div class="grid1">
+         
+            <div class="image">
+            <img src="image 2.png" alt="Yoga Image" ></div>
+            
+            <form method="POST" action="submit.php">
+        <div class="first">
+       
+        <input type="text" name="first_name" placeholder="First Name" required style="width: 280px; height: 40px; padding: 5px; font-size: 16px; border: 1px solid #ddd; border-radius: 4px;"><br><br>
+
+
+     
+        <input type="text" name="last_name"  placeholder="Last Name" required style="width: 240px; height: 40px; padding: 5px; font-size: 16px; border: 1px solid #ddd; border-radius: 4px;"><br><br>
+</div>
+
+
+<div class="first">
+       
+        <input type="date" name="dob" placeholder="Date of Birth" required style="width: 220px; height: 40px; padding: 5px; font-size: 16px; border: 1px solid #ddd; border-radius: 4px;"><br><br>
+        <input type="text" name="nic" placeholder="NIC" required style="width: 280px; height: 40px; padding: 5px; font-size: 16px; border: 1px solid #ddd; border-radius: 4px;"><br><br></div>
+
+        <div class="first">
+    <div class="gender">
+        <select name="gender" required style="width: 270px; height: 40px; padding: 5px; font-size: 16px; border: 1px solid #ddd; border-radius: 4px;">
             <option value="Male">Male</option>
             <option value="Female">Female</option>
-        </select><br><br>
+        </select>
+    </div>
+    <div class="first">
+    <label for="blood_type" style="margin-top: 10px; font-size: 16px;">Blood </label>
+    <select name="blood_type" required style="width: 225px; height: 40px; padding: 5px; font-size: 16px; border: 1px solid #ddd; border-radius: 4px;">
+        <option value="A">A</option>
+        <option value="B">B</option>
+        <option value="AB">AB</option>
+        <option value="O">O</option>
+        <option value="A+">A+</option>
+        <option value="A-">A-</option>
+        <option value="B+">B+</option>
+        <option value="B-">B-</option>
+        <option value="AB+">AB+</option>
+        <option value="AB-">AB-</option>
+        <option value="O+">O+</option>
+        <option value="O-">O-</option>
+    </select>
+</div></div>
 
-        <label for="email">Email:</label><br>
-        <input type="email" name="email" required><br><br>
 
-        <label for="phone">Phone:</label><br>
-        <input type="text" name="phone" required><br><br>
+    <div class="first">
+        <input type="email" name="email" placeholder="Email" required style="width: 280px; height: 40px;margin-top: 10px; padding: 5px; font-size: 16px; border: 1px solid #ddd; border-radius: 4px;"><br><br>
 
-        <label for="blood_type">Blood Type:</label><br>
-        <select name="blood_type" required>
-            <option value="A">A</option>
-            <option value="B">B</option>
-            <option value="AB">AB</option>
-            <option value="O">O</option>
-            <option value="A+">A+</option>
-            <option value="A-">A-</option>
-            <option value="B+">B+</option>
-            <option value="B-">B-</option>
-            <option value="AB+">AB+</option>
-            <option value="AB-">AB-</option>
-            <option value="O+">O+</option>
-            <option value="O-">O-</option>
-        </select><br><br>
+      
+        <input type="text" name="phone" placeholder="Phone" required style="width: 280px; margin-top: 10px; ;height: 40px; padding: 5px; font-size: 16px; border: 1px solid #ddd; border-radius: 4px;"><br><br>
+</div>
 
-        <label for="address">Address:</label><br>
-        <textarea name="address" required></textarea><br><br>
+      
+        
 
-        <label for="nic">NIC:</label><br>
-        <input type="text" name="nic" required><br><br>
+<div class="address">
+        <textarea name="address" placeholder="Address" required style="width: 580px; height: 60px; padding: 5px; font-size: 16px; border: 1px solid #ddd; border-radius: 4px; margin-left:-10px"></textarea><br><br></div>
 
-        <button type="submit">Submit</button>
+
+       
+<div class="submit-button">
+        <button type="submit">Register Needer</button></div>
+
+        <p  class="line">Click to see the Needer Details<span style="color: red;">Needer</span</p> 
     </form>
+        </div>
+
+        <!-- Second Grid Section -->
+        <div class="grid2">
+          
+            <p>TWhen adding your kidney Need details to our plattorm,
+"it is essential that all
+information provided is accurate and true to the best of your knowledge.
+Participation is entirely voluntary, and we encourage only those who are genuinely willing to share their information to proceed.
+Individuals in need of a kidney can register their need on our platform. By registering, you none to rovide on ratardio yeter
+condition and requirements. Please be aware that Renalwise serves as a platform to code ting potential not verify one
+intedonation proided by users</p>
+            
+        </div>
+    </div>
+
+
+
+</div>
 </body>
 </html>
