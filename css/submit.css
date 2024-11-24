@@ -146,3 +146,78 @@ body {
     margin: 20px 0; /* Adds vertical spacing */
     line-height: 1.5; /* Improves readability */
 }
+
+
+.footer {
+    display: flex; /* Flexbox layout */
+    flex-wrap: wrap; /* Wrap items on smaller screens */
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    padding: 20px 0;
+    background-color: #ca6565; /* Light background color */
+}
+
+.footer-image {
+    flex: 0 0 auto; /* Maintain its size */
+    margin: 10px;
+}
+
+.footer-image img {
+    width: 150px; /* Set the image width */
+    height: 150px;
+    border-radius: 50%; /* Optional: make the image circular */
+    object-fit: cover; /* Ensures the image doesn't distort */
+}
+
+.footer-head {
+    flex: 1; /* Allow it to grow and take up space */
+    text-align: center;
+    margin: 10px 20px; /* Add spacing */
+}
+
+.footer-head h1 {
+    font-size: 2rem;
+    margin: 10px 0;
+    color: #000000; /* Black text color */
+}
+
+.footer-subtext {
+    width: 80%; /* Limit the text width */
+    margin: 0 auto;
+    font-size: 1rem;
+    line-height: 1.8;
+    color: #333333; /* Darker text color for better readability */
+}
+
+.footer-right {
+    flex: 0 0 auto; /* Maintain its size */
+    font-size: 1rem;
+    text-align: left;
+    margin: 10px;
+}
+
+@media (max-width: 768px) {
+    .footer {
+        flex-direction: column; /* Stack items vertically on smaller screens */
+        text-align: center; /* Center-align all text */
+    }
+
+    .footer-image img {
+        width: 120px;
+        height: 120px;
+    }
+
+    .footer-head h1 {
+        font-size: 1.5rem; /* Reduce title size */
+    }
+
+    .footer-subtext {
+        font-size: 0.9rem; /* Reduce text size */
+        width: 100%; /* Full width for small screens */
+    }
+
+    .footer-right {
+        font-size: 0.9rem; /* Adjust text size */
+        text-align: center; /* Center text for small screens */
+    }
+}

@@ -37,11 +37,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $stmt->bind_param("sssssssss", $first_name, $last_name, $dob, $gender, $email, $phone, $blood_type, $address, $nic);
 
         // Execute the statement
+// Execute the statement
         if ($stmt->execute()) {
-            // Record added successfully, redirect or show success message
-            echo "Record added successfully.";
-            header("Location: submit.php"); // Redirect to index.php after success
-            exit(); // Always call exit() after header redirection
+            // Record added successfully, show success message using JavaScript
+            echo "<script>
+                alert('Successfully Registered!');
+                window.location.href = 'submit.php'; // Redirect to the form page or another page
+                </script>";
+            exit();
         } else {
             // Show any SQL errors
             echo "Error: " . $stmt->error;
@@ -167,6 +170,27 @@ intedonation proided by users</p>
 
 
 
+    <div class="box-title">
+    <div class="footer flex">
+        <div class="footer-image">
+            <img src="image 2.png" alt="Yoga Image">
+        </div>
+        <div class="footer-head">
+            <h1>Welcome to RENALWISE</h1>
+            <h5 class="footer-subtext">
+                Meet your virtual assistant for kidney health. Our Kidney Health<br> 
+                Chatbot is here to help you assess symptoms, provide information,<br> 
+                and guide you through understanding your kidney health.<br> 
+                It's easy to use and available 24/7 to answer your questions<br> 
+                and offer support whenever you need it.
+            </h5>
+        </div>
+        <p class="footer-right">
+            Chatbot<br>
+            Community Support<br>
+            Find Doctor<br>
+            Educational Resources<br>
+            Kidney Needer
+        </p>
+    </div>
 </div>
-</body>
-</html>
