@@ -1,0 +1,29 @@
+.Title {
+
+    font-family: 'Roboto', Arial, sans-serif; /* Use the imported font */
+    font-size: 3rem; /* Adjust font size */
+    font-weight: bold; /* Make text bold */
+    color: #000000; /* White text color */
+    text-align: center;
+}
+.edit-image img {
+    width: 16px; /* Set the desired width */
+    height: 16px; /* Set the desired height */
+    margin: 0 5px; /* Add some space around the images if needed */
+    vertical-align: middle; /* Align the images properly with text */
+}
+/* Style for the header row */
+tr[style="header"] {
+    background-color: #180307; /* Green background color for the header row */
+    color: rgb(80, 4, 4); /* White text for contrast */
+    font-weight: bold; /* Make header text bold */
+    text-align: center; /* Center-align header text */
+}
+
+/* Style for each header cell (<th>) */
+tr[style="header"] th {
+    padding: 12px 15px; /* Add padding for spacing */
+    font-size: 16px; /* Set a readable font size */
+    border: 1px solid #ddd; /* Add a border around each header cell */
+    cursor: pointer; /* Optional: indicate clickable header for sorting */
+}
