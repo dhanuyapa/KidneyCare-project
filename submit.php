@@ -156,6 +156,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         <!-- Second Grid Section -->
         <div class="grid2">
+        <div class="yoga">
+                    <img src="yoga 1.png" alt="Yoga Image" class="hover-image1">
+                </div>
           
             <p>TWhen adding your kidney Need details to our plattorm,
 "it is essential that all
